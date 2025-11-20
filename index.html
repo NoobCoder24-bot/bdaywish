@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday 🎉</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background:
+        linear-gradient(rgba(255, 214, 224, 0.6), rgba(252, 234, 187, 0.6)),
+        url('https://raw.githubusercontent.com/NoobCoder24-bot/pavibdaywish/main/Img1.jpg') no-repeat center 20%;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+      overflow-x: hidden;
+      min-height: 150vh;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: rgba(255,255,255,0.6);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #d63384;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+
+    .btn-reveal {
+      background-color: #ff66a3;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-reveal:hover {
+      background-color: #e05590;
+    }
+
+    .surprise {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      animation: popUp 1s ease-out forwards;
+    }
+
+    .surprise img {
+      width: 200px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #d63384;
+      font-weight: bold;
+      max-width: 90%;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    canvas.confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <canvas class="confetti"></canvas>
+  <div class="container">
+    <h1>🎉 Happy Birthday, Pavi! 🎂</h1>
+    <p>You’re one good friend I’ve got recently—truly who turned out to be one of my fav 😊</p>
+    <button class="btn-reveal" onclick="showSurprise()">Click to Reveal Your Surprise 🎁</button>
+
+    <div id="surprise" class="surprise">
+      <img src="https://raw.githubusercontent.com/NoobCoder24-bot/pavibdaywish/main/cat.png" alt="Cat with flower" />
+      <div class="message">Wishing you a year filled with happiness, wins, and smiles (the ones you’re great at spreading)</div>
+      <div class="message"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function showSurprise() {
+      document.getElementById('surprise').style.display = 'flex';
+      // Confetti blast!
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+</html>
