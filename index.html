@@ -108,7 +108,11 @@
   </style>
 </head>
 <body>
+
+  <audio id="bg-music" src=".mp3" autoplay loop muted></audio>
+
   <canvas class="confetti"></canvas>
+
   <div class="container">
     <h1>🎉 Happy Birthday, Pavi! 🎂</h1>
     <p>You’re one good friend I’ve got recently—truly who turned out to be one of my fav 😊</p>
@@ -122,10 +126,17 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
   <script>
+ 
+    window.addEventListener("click", () => {
+      const audio = document.getElementById("bg-music");
+      audio.muted = false;
+      audio.play();
+    });
+
     function showSurprise() {
       document.getElementById('surprise').style.display = 'flex';
-      // Confetti blast!
       confetti({
         particleCount: 150,
         spread: 90,
@@ -133,5 +144,6 @@
       });
     }
   </script>
+
 </body>
 </html>
